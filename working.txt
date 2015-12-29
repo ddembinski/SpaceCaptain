@@ -1,0 +1,1 @@
+Note: if i want to create a "warp-speed" effect i can scroll the background really fast and it will look like the enemies are slowed way the hell down while i zip by them. but of course they're going as fast as ever. neat!
