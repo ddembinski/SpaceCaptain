@@ -13,6 +13,7 @@ function load_up()
   bulletImg = love.graphics.newImage('assets/bullet_150.png')
 
   load_enemies() --from enemies.lua
+  load_powerups() --from powerups.lua
 
   deathSound = love.audio.newSource("assets/aiplaneexplode.ogg", "static")
   deathSound:setVolume(1.0)

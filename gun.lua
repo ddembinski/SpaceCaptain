@@ -1,12 +1,22 @@
 canShoot = true
-canShootTimerMax = 0.2
+canShootTimerMax = 0.25
+canShootTimerChange = 0.5
 canShootTimer = canShootTimerMax
 numBullets = 0
-maxBullets = 2
 
 function can_shoot(delta)
-	canShootTimer = canShootTimer - (.75 * delta)
+	canShootTimer = canShootTimer - (canShootTimerChange * delta)
 	if canShootTimer < 0 then
 		canShoot = true
 	end
+end
+
+function fire_gun(delta)
+    --create some bullets
+    newBullet = { x = player.x + (player.img:getWidth()/2), y = player.y, img = bulletImg }
+    table.insert(bullets, newBullet)
+    numBullets = numBullets +1
+    gunSound:play() 
+    canShoot = false
+    canShootTimer = canShootTimerMax
 end

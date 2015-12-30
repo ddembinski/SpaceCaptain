@@ -7,13 +7,7 @@ function process_commands(delta)
 	end
 
 	if love.keyboard.isDown('space', 'rctrl', 'lctrl', 'ctrl') and canShoot and player.isAlive and numBullets <= maxBullets then
-		--create some bullets
-		newBullet = { x = player.x + (player.img:getWidth()/2), y = player.y, img = bulletImg }
-		table.insert(bullets, newBullet)
-		numBullets = numBullets +1
-		gunSound:play() 
-		canShoot = false
-		canShootTimer = canShootTimerMax
+                fire_gun(dt) --from gun.lua
 	end
 
 	if love.keyboard.isDown('left','a') and player.isAlive then
@@ -53,14 +47,7 @@ function process_commands(delta)
 		player.y = 610
 
 		--reset our game state
-		score = 0
-		player.isAlive = true
-		beatHiScore = false
-		played_death_sound = false
-		if fuel.remaining < 1 then
-			bg.y = -4100
-			reset_timer()
-		end
+		reset_game() -- in main.lua
 	end
 
 end

@@ -1,4 +1,4 @@
-player = { x= 200, y = 610, speed = 175, img = nil, isAlive=true }
+player = { x= 200, y = 630, speed = 150, img = nil, isAlive=true }
 fuel = { remaining=400, default=400 }
 played_death_sound = false
 deathMessage = "Killed by mysterious forces."
@@ -17,15 +17,15 @@ function reset_timer()
 end
 
 function update_player_speed()
-	if score >= 25 and score < 50 then
-		player.speed = 200
-	elseif score >= 50 and score < 75 then
-		player.speed = 225
-	elseif score >=75 then
-		player.speed = 250
-	else
-		player.speed = 175
-	end
+	--if score >= 25 and score < 50 then
+	--	player.speed = 200
+	--elseif score >= 50 and score < 75 then
+	--	player.speed = 225
+	--elseif score >=75 then
+	--	player.speed = 250
+	--else
+	--	player.speed = 175
+	--end
 end
 
 function draw_player()

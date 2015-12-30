@@ -1,3 +1,5 @@
+require "powerups"
+
 enemies = {} --table of enemies
 createEnemyTimerMax = 0.4
 createEnemyTimer = createEnemyTimerMax
@@ -84,4 +86,14 @@ function draw_enemies(enemy_table)
   		end
   		love.graphics.draw(enemy.img, enemy.x, enemy.y, enemy.r)
   	end
+end
+
+function kill_enemy(enemyTable, key, ene_x, ene_y)
+	enemyDeathSound:stop()
+    enemyDeathSound:play()
+    if math.floor(rand()*15) + 1 == 5 then
+    	create_powerup(ene_x, ene_y)
+    end
+    table.remove(enemyTable, key)
+
 end
