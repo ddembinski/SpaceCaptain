@@ -9,9 +9,12 @@ function load_up()
   love.graphics.setFont(font)
   bg.img = love.graphics.newImage('assets/starfield1.png')
 
-  player.img = love.graphics.newImage('assets/spaceship.png')
+  player.img = love.graphics.newImage('assets/Dove.png')
+  anim = newAnimation(player.img, 64, 64, 0.1, 0)
   bulletImg = love.graphics.newImage('assets/bullet_150.png')
-
+  
+  load_explosions() --from explosion.lua
+  load_smoke() --from smoke.lua
   load_enemies() --from enemies.lua
   load_powerups() --from powerups.lua
 

@@ -13,7 +13,7 @@ end
 
 function fire_gun(delta)
     --create some bullets
-    newBullet = { x = player.x + (player.img:getWidth()/2), y = player.y, img = bulletImg }
+    newBullet = { x = player.x + (player.img:getWidth()/10), y = player.y, img = bulletImg }
     table.insert(bullets, newBullet)
     numBullets = numBullets +1
     gunSound:play() 

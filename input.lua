@@ -15,7 +15,7 @@ function process_commands(delta)
 			player.x = player.x - (player.speed*delta)
 		end
 	elseif love.keyboard.isDown('right','d') and player.isAlive then
-		if player.x < (love.graphics.getWidth() - player.img:getWidth()) then
+		if player.x < (love.graphics.getWidth() - (player.img:getWidth()/4)) then
 			player.x = player.x + (player.speed*delta)
 		end
 	end

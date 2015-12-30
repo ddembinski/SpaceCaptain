@@ -29,7 +29,8 @@ function update_player_speed()
 end
 
 function draw_player()
-	love.graphics.draw(player.img, player.x, player.y, 0, 1.2, 1.2)
+	--love.graphics.draw(player.img, player.x, player.y, 0, 1.2, 1.2)
+	anim:draw(player.x, player.y)
 end
 
 function kill_player(cause_of_death)
@@ -39,6 +40,9 @@ function kill_player(cause_of_death)
 	end
 	deathMessage = cause_of_death
 	player.isAlive = false
+	create_explosion(player.x, player.y, 5.0)
+	print("maxBullets: " ..tostring(maxBullets) .."\n")
+	print("numBullets: " ..tostring(numBullets) .."\n")
 end
 
 function display_death_message()
