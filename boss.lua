@@ -48,6 +48,7 @@ end
 function draw_boss()
 	if boss.isAlive then
 		 --build a boss out of composite enemy parts
+		enemy1Anim:draw(boss.x, boss.y)
 	 	enemy5Anim:draw(boss.x, boss.y)
  		enemy3Anim:draw(boss.x+50, boss.y)
  		enemy4Anim:draw(boss.x+50, boss.y+10)

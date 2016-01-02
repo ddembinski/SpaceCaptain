@@ -3,8 +3,12 @@
 --delta is the dt global variable passed from main.lua. It complains when you try to use dt in this module otherwise.
 function process_commands(delta)
 	if love.keyboard.isDown('escape') then
-		love.event.push('quit')
+		gamestate = "paused"
 	end
+
+	if love.keyboard.isDown('q') then
+    	love.event.push('quit')
+    end
 
 	if love.keyboard.isDown('space', 'rctrl', 'lctrl', 'ctrl') and canShoot and player.isAlive and numBullets <= maxBullets then
                 fire_gun(dt) --from gun.lua
@@ -24,8 +28,8 @@ function process_commands(delta)
 	if love.keyboard.isDown('up','w') and player.isAlive then
 		if player.y > 0 then -- binds us to the map
 			player.y = player.y - ((player.speed*2)*delta)
-			bg.y = bg.y + (150*delta)
-			fuel.remaining = fuel.remaining - (16*delta)
+			--bg.y = bg.y + (150*delta)
+			--fuel.remaining = fuel.remaining - (16*delta)
 		end
 	elseif player.isAlive then
 		if player.y < (love.graphics.getHeight() - player.img:getHeight()) then

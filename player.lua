@@ -41,8 +41,6 @@ function kill_player(cause_of_death)
 	deathMessage = cause_of_death
 	player.isAlive = false
 	create_explosion(player.x, player.y, 5.0)
-	print("maxBullets: " ..tostring(maxBullets) .."\n")
-	print("numBullets: " ..tostring(numBullets) .."\n")
 end
 
 function display_death_message()

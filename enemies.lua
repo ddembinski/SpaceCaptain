@@ -5,15 +5,15 @@ createEnemyTimerMax = 0.4
 createEnemyTimer = createEnemyTimerMax
 
 function load_enemies()
-  enemy1Img = love.graphics.newImage('assets/UFO.png')
-  enemy1Anim = newAnimation(enemy1Img, 64, 64, 0.1, 0)
-  enemy2Img = love.graphics.newImage('assets/Ninja.png')
+  enemy1Img = love.graphics.newImage('assets/lander.png')
+  enemy1Anim = newAnimation(enemy1Img, 64, 64, 0.4, 0)
+  enemy2Img = love.graphics.newImage('assets/bell.png')
   enemy2Anim = newAnimation(enemy2Img, 64, 64, 0.1, 0)
-  enemy3Img = love.graphics.newImage('assets/Paranoid.png')
+  enemy3Img = love.graphics.newImage('assets/top.png')
   enemy3Anim = newAnimation(enemy3Img, 64, 64, 0.1, 0)
-  enemy4Img = love.graphics.newImage('assets/Ligher.png')
+  enemy4Img = love.graphics.newImage('assets/splatter.png')
   enemy4Anim = newAnimation(enemy4Img, 64, 64, 0.1, 0)
-  enemy5Img = love.graphics.newImage('assets/Lightning.png')
+  enemy5Img = love.graphics.newImage('assets/nemesis.png')
   enemy5Anim = newAnimation(enemy5Img, 64, 64, 0.1, 0)
 end
 
@@ -63,28 +63,32 @@ function update_enemies(delta)
 		if enemy.enemyType == 2 then
 			enemy.x = enemy.x + ((math.sin((enemy.direction * 0.5 * 3.141)/5) * 200) * delta)
 			enemy.r = (math.rad(get_vector_x(prev_x, prev_y, enemy.x, enemy.y)) *50) * -1
-			enemy2Anim:update(delta)
+			
 		elseif enemy.enemyType == 3 then
 			enemy.x = enemy.x + ((math.cos((enemy.direction * 0.5 * 3.141)/5) *score) * delta)
 			enemy.r = (math.rad(get_vector_x(prev_x, prev_y, enemy.x, enemy.y)) * 50) * -1
-			enemy3Anim:update(delta)
+			
 		elseif enemy.enemyType == 4 then
 			enemy.x = enemy.x + ((get_vector_x(player.x, player.y + 200, enemy.x, enemy.y) / 20) *-1) * score
 			enemy.r = (math.rad(get_vector_x(prev_x, prev_y, enemy.x, enemy.y)) * 50) * -1
-			enemy4Anim:update(delta)
+			
 		elseif enemy.enemyType == 5 then
 			enemy.x = enemy.x + ((get_vector_x(player.x, player.y + 200, enemy.x, enemy.y) / 10) *-1) * score
 			enemy.r = (math.rad(get_vector_x(prev_x, prev_y, enemy.x, enemy.y)) * 50) * -1
-			enemy5Anim:update(delta)
+			
 		else
-			enemy1Anim:update(delta)
+			
 		end
 
   		if enemy.y > 850 then --remove enemies when they pass off the screen
 			table.remove(enemies, i)
 		end
 	end
-
+	enemy1Anim:update(delta)
+	enemy2Anim:update(delta)
+	enemy3Anim:update(delta)
+	enemy4Anim:update(delta)
+	enemy5Anim:update(delta)
 end
 
 --takes a table of enemies and iterates through, setting options and then drawing
