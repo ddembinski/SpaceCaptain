@@ -1,6 +1,3 @@
--- This game began by following Dawson Goodell's tutorial at http://www.osmstudios.com/tutorials/your-first-love2d-game-in-200-lines-part-1-of-3
--- Clearest "How to build a game" tutorial I've ever read, and highly recommended.
-
 --Background music is "Pulse", by SpiderDave (http://opengameart.org/content/pulse)
 --SFX are by "messersm" (http://opengameart.org/content/space-sound-effects)
 
